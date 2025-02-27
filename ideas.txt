@@ -1,0 +1,7 @@
+add a script to bulk add for a directory by passing in folder
+add a UI to allow users to change where the data is added
+add more fonts and allow users to select fonts
+create a settings.json to store user settings, create settings.json on boot if not created
+add watermarking feature to watermark images
+allow users to select what information to add
+allow users to choose the order the metadata is displayed

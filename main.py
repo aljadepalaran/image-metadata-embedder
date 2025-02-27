@@ -15,7 +15,7 @@ if __name__ == "__main__":
     shutter_speed = f"1/{int(1 / exposure_time)}"
     aperature = exif['FNumber']
 
-
+    print(exif)
 
     im = add_text(img, f"{focal_length}mm     {shutter_speed}     f/{aperature}", (500, 3500), 150, (255, 255, 255))
     im.save("./saved.jpg")
