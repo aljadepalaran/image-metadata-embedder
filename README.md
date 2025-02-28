@@ -3,6 +3,13 @@
 ## Summary
 This repository contains tools required to add metadata as text to images making it easy to share the settings used to capture the image.
 
+## Example
+Input Image:
+![Base Image](test.jpg "Base Image")
+
+Output Image:
+![Result Image](saved.jpg "Result")
+
 ## Requirements
 To run this, you will need:
 - Python3
