@@ -1,10 +1,5 @@
-from PIL import Image, ExifTags, ImageDraw, ImageFont
-
-def add_text(im, text, topleft, size, colour):
-  font = ImageFont.truetype("./Montserrat.ttf", size)
-  draw = ImageDraw.Draw(im)
-  draw.text(topleft, text, font=font,fill=colour)
-  return im
+from PIL import Image, ExifTags
+from modules.text_processor import add_text
 
 def parse_exif(exif_data):
   return exif['FocalLength'], float(exif['ExposureTime']), exif['FNumber']
