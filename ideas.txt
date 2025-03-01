@@ -7,3 +7,7 @@ allow users to select what information to add
 allow users to choose the order the metadata is displayed
 
 add checks to see if any metadata is missing.
+add arguments relative to the image
+  position: position relative to the image (--pos=x%,y%)
+  position: center x of the image (--pos=center,90%)
+  size: size relative to image height (--size=10%)
