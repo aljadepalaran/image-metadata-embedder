@@ -1,7 +1,9 @@
 from PIL import Image, ExifTags
-from functions import parse_exif, add_text, generate_filename
+from functions import *
+import os
 
 class ImageEmbedder:
+  @staticmethod
   def process_image(source):
     image = Image.open(source)
     exif = { ExifTags.TAGS[k]: v for k, v in image._getexif().items() if k in ExifTags.TAGS }
@@ -12,5 +14,13 @@ class ImageEmbedder:
     output.save(output_filename)
     print(f'Process complete. {output_filename} created.')
 
-  def process_directory(recursive):
-    print(f'recursive: {recursive}')
+  @staticmethod
+  def process_directory(source, recursive):
+    directory = os.fsencode(source)
+    if recursive:
+      print('Recursively running.')
+      for filepath in list_valid_filepaths_recursively(directory):
+        ImageEmbedder.process_image(filepath)
+    else:
+      for filepath in list_valid_filepaths(directory):
+        ImageEmbedder.process_image(filepath)

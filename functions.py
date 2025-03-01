@@ -1,4 +1,5 @@
 from PIL import ImageFont, ImageDraw
+import os
 
 # Add text into the image
 def add_text(image, text, topleft, size, colour):
@@ -20,3 +21,15 @@ def generate_filename(filename):
 # Return specific exif data
 def parse_exif(exif):
   return exif['FocalLength'], float(exif['ExposureTime']), exif['FNumber']
+
+# Return a list of the filepaths to process from a directory
+def list_valid_filepaths(directory):
+  paths = []
+  for file in os.listdir(directory):
+    filename = os.fsdecode(file)
+    if filename.endswith(('.jpg', '.jpeg', '.png')):
+      paths.append(os.path.join(directory.decode("utf-8"), filename))
+  return paths
+
+def list_valid_filepaths_recursively(directory):
+  print()

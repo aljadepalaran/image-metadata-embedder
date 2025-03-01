@@ -19,8 +19,8 @@ if __name__ == "__main__":
 
   elif os.path.isdir(source):
     debug_mode and print('Directory detected. Processing all files inside directory.')
-    ImageEmbedder.process_directory(recursive=config['recursive'])
-    print()
+    ImageEmbedder.process_directory(source=source, recursive=config['recursive'])
+    print('Processing of directory complete.')
 
   else:
     print('Invalid argument passed. Exiting...')
