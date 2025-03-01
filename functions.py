@@ -20,7 +20,7 @@ def generate_filename(filename):
 
 # Return specific exif data
 def parse_exif(exif):
-  return exif['FocalLength'], float(exif['ExposureTime']), exif['FNumber']
+  return exif['FocalLength'], float(exif['ExposureTime']), exif['FNumber'], exif['ISOSpeedRatings']
 
 # Return a list of the filepaths to process from a directory
 def list_valid_filepaths(directory):
