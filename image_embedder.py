@@ -7,9 +7,10 @@ class ImageEmbedder:
     image = Image.open(source)
     exif = { ExifTags.TAGS[k]: v for k, v in image._getexif().items() if k in ExifTags.TAGS }
     focal_length, exposure_time, aperature = parse_exif(exif)
-    text_to_add = f"{focal_length}mm     1/{int(1 / exposure_time)}     f/{aperature}"
-    position = tuple(map(int, opts['pos'].split(','))) or (500,3500)
-    size = int(opts['size']) or 200
+    space = int(opts['space']) * ' '
+    text_to_add = f"{focal_length}mm{space}1/{int(1 / exposure_time)}{space}f/{aperature}"
+    position = tuple(map(int, opts['pos'].split(',')))
+    size = int(opts['size'])
     output = add_text(image, text_to_add, position, size, (255, 255, 255))
     output_filename = generate_filename(source)
     output.save(output_filename)
