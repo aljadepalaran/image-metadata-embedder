@@ -5,7 +5,9 @@ import os
 class ImageEmbedder:
   def process_image(source, opts):
     image = Image.open(source)
+    original_exif = image.info['exif']
     image_exif = image._getexif()
+    print(image.info['exif'])
     if type(image_exif) == type(None):
       print(f'Skipping {source}, no exif data.')
     else:
@@ -17,7 +19,7 @@ class ImageEmbedder:
       size = int(opts['size'])
       output = add_text(image, text_to_add, position, size, (255, 255, 255))
       output_filename = generate_filename(source)
-      output.save(output_filename)
+      output.save(output_filename, exif=original_exif)
       print(f'Process complete. {output_filename} created.')
 
   @staticmethod
