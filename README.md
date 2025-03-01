@@ -17,5 +17,9 @@ To run this, you will need:
 
 You can install Pillow using `pip install pillow`
 
+## Usage
+To run the application, you will need the filename of the image you wish to embed the text to.
+`python3 main.py image.jpeg`
+
 ## Contributing
 This project will remain open-source to allow the public to utilise this. To contribute, please submit a PR for review. Please include a description of the PR, what new features it implements or what bugs it fixes.
