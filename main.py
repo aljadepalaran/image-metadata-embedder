@@ -17,6 +17,8 @@ if __name__ == "__main__":
   source = config['src']
   opts = { 'pos': config['pos'], 'size': config['size'], 'space': config['space'] }
 
+  debug_mode and print(f'opts: {opts}')
+
   if config['skip']:
     quit()
 
@@ -27,7 +29,7 @@ if __name__ == "__main__":
 
   elif os.path.isdir(source):
     debug_mode and print('Directory detected. Processing all files inside directory.')
-    ImageEmbedder.process_directory(source=source, recursive=config['recursive'])
+    ImageEmbedder.process_directory(source=source, recursive=config['recursive'], opts=opts)
     print('Processing of directory complete.')
 
   else:

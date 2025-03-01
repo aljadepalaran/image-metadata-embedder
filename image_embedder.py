@@ -17,7 +17,7 @@ class ImageEmbedder:
     print(f'Process complete. {output_filename} created.')
 
   @staticmethod
-  def process_directory(source, recursive):
+  def process_directory(source, recursive, opts):
     directory = os.fsencode(source)
     if recursive:
       print('Recursively running.')
@@ -25,4 +25,4 @@ class ImageEmbedder:
         ImageEmbedder.process_image(filepath)
     else:
       for filepath in list_valid_filepaths(directory):
-        ImageEmbedder.process_image(filepath)
+        ImageEmbedder.process_image(filepath, opts)
