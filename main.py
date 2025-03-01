@@ -2,13 +2,13 @@ import argparse, os
 from image_embedder import ImageEmbedder
 
 if __name__ == "__main__":
-  parser = argparse.ArgumentParser(description="Just an example", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-  parser.add_argument("-d", "--debug", action="store_true", help="debug mode")
-  parser.add_argument("-r", "--recursive", action="store_true", help="enable to run on directories recursively. this includes child directories")
-  parser.add_argument("-p", '--pos', help="the position of the text in --pos=X,Y")
-  parser.add_argument('--size', help="the size of the text in pixel height")
-  parser.add_argument("-s", "--skip", action="store_true", help="skip logic")
-  parser.add_argument("src", help="source file or directory")
+  parser = argparse.ArgumentParser(description="Image Metadata Embedder", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+  parser.add_argument("-d", "--debug", action="store_true", help="Debug mode for development purposes")
+  parser.add_argument("-r", "--recursive", action="store_true", help="Run recursively on directories inside a directory")
+  parser.add_argument("-p", '--pos', help="Set the position of the text in --pos=X,Y")
+  parser.add_argument('--size', help="Set the size of the font using height in pixels.")
+  parser.add_argument("-s", "--skip", action="store_true", help="Skip the image embedding logic")
+  parser.add_argument("src", help="Source file or directory")
   args = parser.parse_args()
   config = vars(args)
   debug_mode = config['debug']
