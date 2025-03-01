@@ -25,8 +25,9 @@ To run the embedder on a set of images, simply pass in the directory: `python3 m
 ## Arguments
 There are various arguments that can be passed in to customise the output.
 These are:
-- Position `--pos=x,y`
-- Size `--size=200`
+- Position (where the metadata will be placed in the image) `--pos=x,y`
+- Size (the size of the metadata in pixel height) `--size=200`
+- Space (the gap between the metadata - measured in number of spaces) `--space=5`
 
 To get a full list of arguments, run `python3 main.py --help`
 
