@@ -11,3 +11,5 @@ add arguments relative to the image
   position: position relative to the image (--pos=x%,y%)
   position: center x of the image (--pos=center,90%)
   size: size relative to image height (--size=10%)
+
+add vertical stacking of the metadata, as opposed to displaying horizontally.
